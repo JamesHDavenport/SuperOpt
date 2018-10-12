@@ -1,0 +1,25 @@
+\def\WPAdminDiss{0}
+\def\WPAdmin{0}
+\def\WPDiss{0}
+\def\WPAdminDissName{Administration and dissemination}
+% Currently one WP. But we might want to split it, so please use \WPAdmin or \WPDiss if appropriate.
+\def\WPCrypto{1}
+\def\WPCryptoName{Cryptography}
+\def\WPTools{2}
+\def\WPToolsName{Tools and their security}
+\ifulster
+\def\WPCloud{3}
+\def\WPCloudName{Cloud security}
+\def\WPUser{4}
+\else
+\def\WPUser{3}
+\fi
+\def\WPUserName{User and legal acceptability}
+\newcounter{WPLast}
+\setcounter{WPLast}{\WPUser}
+\addtocounter{WPLast}{1}
+\ifinternal
+\usepackage[show]{ed}
+\else
+\usepackage[hide]{ed}
+\fi

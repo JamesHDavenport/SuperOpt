@@ -1,0 +1,107 @@
+\def\pds{{\cal PDS}}
+\def\PROC{Proceedings}
+\def\MARCH{March}
+\def\LNCS{Lecture Notes in Computer Science}
+\def\FRANCE{France}
+\def\GERMANY{Germany}
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage[show]{ed}
+\usepackage{url}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand\familydefault{\sfdefault}
+\raggedright
+\usepackage{pgfgantt}
+\bibliographystyle{alpha}
+\begin{document}
+%\maketitle
+\noindent
+Project Gantt Chart, aligned with academic years:\\
+Q1 = October--December etc.\\
+\begin{ganttchart}[x unit = 0.7cm, y unit chart= 0.5cm]{18}
+\gantttitle{2012--3}{2}
+\gantttitle{2013--4}{4}
+\gantttitle{2014--5}{4}
+\gantttitle{2015--6}{4}
+\gantttitle{2016--7}{4}\\
+\gantttitle{Q3}{1} 
+\gantttitle{Q4}{1} 
+\gantttitle{Q1}{1} 
+\gantttitle{Q2}{1} 
+\gantttitle{Q3}{1} 
+\gantttitle{Q4}{1} 
+\gantttitle{Q1}{1} 
+\gantttitle{Q2}{1} 
+\gantttitle{Q3}{1} 
+\gantttitle{Q4}{1} 
+\gantttitle{Q1}{1} 
+\gantttitle{Q2}{1} 
+\gantttitle{Q3}{1} 
+\gantttitle{Q4}{1} 
+\gantttitle{Q1}{1} 
+\gantttitle{Q2}{1} 
+\gantttitle{Q3}{1} 
+\gantttitle{Q4}{1} 
+\\
+\ganttbar{Preparation}{1}{2}\\
+\ganttgroup{Year 0}{3}{6}\\
+\ganttbar{Teach Year 0}{3}{5}\\
+\ganttlink[link mid=0.4]{elem0}{elem2}
+\ganttbar{Evaluation}{6}{6}\\
+\ganttlink{elem2}{elem3}
+\ganttbar{Develop year 1}{3}{5}\\
+\ganttlink[link mid=0.2]{elem0}{elem4}
+\ganttbar{Preparation/Test}{6}{6}\\
+\ganttlink{elem4}{elem5}
+\ganttgroup{Year 1}{7}{10}\\
+\ganttbar{Teach Year 1}{7}{9} \\
+\ganttlink{elem5}{elem7}
+\ganttlink[link mid=0.6]{elem3}{elem7}
+\ganttbar{Evaluation}{10}{10}\\
+\ganttlink{elem7}{elem8}
+\ganttbar{Develop year 2}{7}{9}\\
+\ganttlink[link mid=0.4]{elem3}{elem9}
+\ganttbar{Preparation/Test}{10}{10}\\
+\ganttlink{elem9}{elem10}
+\ganttgroup{Year 2}{11}{14}\\
+\ganttbar{Exam Boards}{11}{11}\\
+\ganttbar{Teach Year 2}{11}{13} \\
+\ganttlink[link mid=0.6]{elem8}{elem12}
+\ganttlink[link mid=0.47]{elem8}{elem13}
+\ganttbar{Evaluation}{14}{14}\\
+\ganttlink{elem13}{elem14}
+\ganttbar{Develop year 3}{11}{13}\\
+\ganttlink[link mid=0.2]{elem10}{elem15}
+\ganttbar{Preparation/Test}{14}{14}\\
+\ganttlink{elem15}{elem16}
+\ganttgroup{Year 3}{15}{18}\\
+\ganttbar{Teach Year 3}{15}{17} \\
+\ganttlink[link mid=0.6]{elem14}{elem18}
+\ganttlink[link mid=0.2]{elem16}{elem18}
+%\ganttbar{Develop year 3}{15}{17}\\
+\ganttbar{Eval/Dissem}{18}{18}\\
+\ganttlink{elem18}{elem19}
+\ganttmilestone{Public Workshop}{18} \ganttnewline
+\ganttgroup{B'ham RO}{2}{14}
+\end{ganttchart}
+\begin{description}
+\item[Teach]includes the following activities.
+\item[\it Bath:]teaching XX10190, with three lecturers (including JHD), 10+ divisional tutors,  250+ first-year students, the Mathematics and Statistics Help desk; use in evaluating the mathematical comptence of Computer Science applicants (RJB Admissions Tutor).
+\item[\it Birmingham:]what exactly did you have in mind?
+\item[Eval]describes the holistic evaluation of the year's activity\footnote{As opposed to the detailed evaluation of specific exercises etc., which will take place throughput the year.}, including student and tutor evaluations of the course, and input from examination results and Year 2 teachers reflections.
+\end{description}
+\end{document}
+\ganttbar{Task 1}{1}{2} \\
+\ganttlinkedbar{Task 2}{3}{7} \ganttnewline
+\ganttmilestone{Milestone}{7} \ganttnewline
+\ganttbar{Final Task}{8}{12}
+%\ganttlink{elem2}{elem3}
+%\ganttlink{elem3}{elem4}
+
+\begin{enumerate}
+\end{enumerate}
+\begin{itemize}
+\end{itemize}
+\begin{description}
+\end{description}
