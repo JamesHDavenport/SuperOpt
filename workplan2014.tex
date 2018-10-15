@@ -1,0 +1,199 @@
+\documentclass[11pt]{article}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{fit}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{chains}
+\usetikzlibrary{matrix}
+\usetikzlibrary{snakes}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usepackage[a3paper,margin=1cm]{geometry}
+\thispagestyle{empty}
+\pagestyle{empty}
+\begin{document}
+%Only a prototype!
+\par
+\tikzstyle{procnode} = [draw,rectangle,rounded corners=5pt,fill=white]
+\tikzstyle{endnode} = [draw,circle,fill=black]
+\tikzstyle{midnode} = [draw,circle,fill=gray]
+\tikzstyle{timeline} = [-latex,line width=2pt,color=gray]
+\tikzstyle{timelabel} = [at start,anchor=south west,color=black]
+\
+\begin{tikzpicture}\sf
+\matrix[%
+matrix of nodes,
+nodes in empty cells,
+nodes={outer sep=0pt},%circle,minimum size=4pt,draw},
+%column sep={3.5cm,between origins},
+column sep={1.5cm,between origins},
+row sep=0.8cm,
+](workplan){
+&&&&&&&&&&&&&&&&\\
+&&&&&&&&&&&&&&&&\\
+&&&&&&&&&&&&&&&&\\
+&&&&&&&&&&&&&&&&\\
+&&&&&&&&&&&&&&&&\\
+&&&&&&&&&&&&&&&&\\
+&&&&&&&&&&&&&&&&\\
+&&&&&&&&&&&&&&&&\\
+&&&&&&&&&&&&&&&&\\
+&&&&&&&&&&&&&&&&\\
+};
+
+\draw[latex-latex] (workplan-1-1) -- node[above]{Prep}(workplan-1-2);
+\draw[latex-latex] (workplan-1-2) -- node[above]{Research}(workplan-1-14);
+\draw[latex-latex] (workplan-1-14) -- node[above]{Dissemination}(workplan-1-17);
+% months top row
+\draw(workplan-2-1)node{10/15};
+\draw(workplan-2-2)node{1/16};
+\draw(workplan-2-3)node{4/16};
+\draw(workplan-2-4)node{7/16};
+\draw(workplan-2-5)node{10/16};
+\draw(workplan-2-6)node{1/17};
+\draw(workplan-2-7)node{4/17};
+\draw(workplan-2-8)node{7/17};
+\draw(workplan-2-9)node{10/17};
+\draw(workplan-2-10)node{1/18};
+\draw(workplan-2-11)node{4/18};
+\draw(workplan-2-12)node{7/18};
+\draw(workplan-2-13)node{10/18};
+\draw(workplan-2-14)node{1/19};
+\draw(workplan-2-15)node{4/19};
+\draw(workplan-2-16)node{7/19};
+\draw(workplan-2-17)node{10/19};
+
+
+% months bottom row
+\draw(workplan-10-1)node{RS start};
+\draw(workplan-10-2)node{RO start};
+%\draw(workplan-10-3)node{Oct '16};
+%\draw(workplan-10-5)node{Oct '17};
+%\draw(workplan-10-6)node{Apr '18};
+%\draw(workplan-10-7)node{Oct '19};
+%\draw(workplan-10-6)node{RS transfer\\to Ph.D};
+\draw(workplan-10-6)node{RS confirm};
+%\draw(workplan-8-12)node{ISSAC};
+\draw(workplan-10-14)node{RO end};
+\draw(workplan-10-15)node{RS end};
+%\draw(workplan-10-16)node{ISSAC};
+%\draw(workplan-10-8)node{31/3/15};
+
+% wp start and finish
+% wp0
+\draw(workplan-3-1)node[procnode](wp0){WP0};
+\draw(workplan-3-2)node[procnode](ag1){ Initiation};
+\draw(workplan-3-6)node[procnode](ag2){AG};
+\draw(workplan-3-10)node[procnode](ag3){AG};
+\draw(workplan-3-14)node[procnode](ag4){AG};
+\draw(workplan-3-17)node[procnode](wp1a-end){AG};
+\draw[timeline](wp0)--node[timelabel]{\sf\qquad\qquad Project Management (JHD+all)}(wp1a-end);
+
+% wp1
+\draw(workplan-4-1)node[procnode](wp1){WP1};
+\draw(workplan-4-14)node[endnode](wp1-end){};
+\draw[timeline](wp1)--node[timelabel]{\sf}(wp1-end);
+\begin{pgfonlayer}{background}
+%\draw[timeline](wp1-end)--(workplan-7-2);
+\end{pgfonlayer}
+
+% wp2
+\draw(workplan-5-2)node[procnode](wp1){WP2};
+\draw(workplan-5-6)node[midnode](wp1-mid1){};
+\draw(workplan-5-10)node[midnode](wp1-mid1){};
+\draw(workplan-5-14)node[endnode](wp1-end){};
+\draw[timeline](wp1)--node[timelabel]{\sf Implementation (RO+RJB/JHD)}(wp1-end);
+
+% wp3
+\draw(workplan-6-2)node[procnode](wp2){WP3};
+\draw(workplan-6-6)node[midnode](wp2-mid1){};
+\draw(workplan-6-10)node[midnode](wp2-mid2){};
+\draw(workplan-6-14)node[endnode](wp2-end){};
+\draw[timeline](wp2)--node[timelabel]{\sf Theory Development (RS+JHD/RJB)}(wp2-end);
+%\draw[timeline](wp3-mid2)--(workplan-7-7);
+%\draw(workplan-6-2)node[midnode](wp2a){};
+%\draw(workplan-6-3)node[midnode](wp2b){};
+%\draw(workplan-6-4)node[midnode](wp2c){};
+%\draw(workplan-6-5)node[midnode](wp2d){};
+%\draw(workplan-6-6)node[midnode](wp2e){};
+%\draw(workplan-6-7)node[midnode](wp2f){};
+%\draw[timeline](wp2a)--node[timelabel]{\sf Bath}(wp2b);
+%\draw[timeline](wp2b)--node[timelabel]{\sf `friends'}(wp2c);
+%\draw[timeline](wp2c)--node[timelabel]{\sf SIG/HECToR/Commercial}(wp2e);
+%\draw[timeline](wp2e)--node[timelabel]{\sf Residual}(wp2f);
+% wp4
+%\draw(workplan-6-2)node[procnode](wp4){WP4};
+%\draw(workplan-6-4)node[midnode](wp4-mid1){};
+%\draw(workplan-6-6)node[midnode](wp4-end){};
+%\draw(workplan-6-9)node[endnode](wp4-end){};
+%\draw[timeline](wp4)--node[timelabel]{\sf Mumble}(wp4-end);
+
+% wp5
+\draw(workplan-7-1)node[procnode](wp4){Ph.D};
+\draw(workplan-7-2)node[midnode](wp4a){};
+\draw[timeline](wp4)--node[timelabel]{\sf \llap{Train}ing (RS+)}(wp4a);
+\draw(workplan-7-6)node[midnode](wp4-mid1){};
+\draw(workplan-7-10)node[midnode](wp4-mid1){};
+\draw(workplan-7-14)node[procnode](wp4b){};
+\draw[timeline](wp4a)--node[timelabel]{\qquad\qquad\sf Conducting Research (RS+supervisors)}(wp4b);
+\draw(workplan-7-15)node[endnode](wp4-end){};
+\draw[timeline](wp4b)--node[timelabel]{\sf Thesis (RS+)}(wp4-end);
+
+% dissemination
+\draw(workplan-8-1)node[procnode](dissemination){Dissemination};
+\draw(workplan-8-17)node[procnode](dissemination-end){journal};
+%\draw[timeline](dissemination)--(dissemination-end);
+%\draw(workplan-8-2)node[procnode]{HPC--SIG};
+\draw(workplan-8-4)node[procnode]{ISSAC};
+\draw(workplan-8-8)node[procnode]{I/MEGA};
+\draw(workplan-8-12)node[procnode]{ISSAC};
+\draw(workplan-8-16)node[procnode]{I/MEGA};
+
+
+% deliverables
+\draw(workplan-9-1)node[procnode](deliverables){Deliverables};
+\draw(workplan-9-8)node[procnode](){Maple 21?};
+\draw(workplan-9-12)node[procnode](){Maple 22?};
+\draw(workplan-9-17)node[procnode](deliverables-end){Maple 23?};
+\draw(workplan-9-16)node[procnode]{workshop};
+
+% \draw(workplan-1-1)--(workplan-8-8);
+
+\begin{pgfonlayer}{background}
+\draw(workplan-1-1)--(workplan-10-1);
+\draw(workplan-1-2)--(workplan-10-2);
+\draw(workplan-1-3)--(workplan-10-3);
+\draw(workplan-1-4)--(workplan-10-4);
+\draw(workplan-1-5)--(workplan-10-5);
+\draw(workplan-1-6)--(workplan-10-6);
+\draw(workplan-1-7)--(workplan-10-7);
+\draw(workplan-1-8)--(workplan-10-8);
+\draw(workplan-1-9)--(workplan-10-9);
+\draw(workplan-1-10)--(workplan-10-10);
+\draw(workplan-1-11)--(workplan-10-11);
+\draw(workplan-1-12)--(workplan-10-12);
+\draw(workplan-1-13)--(workplan-10-13);
+\draw(workplan-1-14)--(workplan-10-14);
+\draw(workplan-1-15)--(workplan-10-15);
+\draw(workplan-1-16)--(workplan-10-16);
+\draw(workplan-1-17)--(workplan-10-17);
+\end{pgfonlayer}
+
+\end{tikzpicture}
+\par
+\begin{tabular}{llll}
+key&people&&events\\
+{\bf RJB}&Russell Bradford (CI)&
+{\bf AG}&Formal Rendezvous of Advisory Group\\
+{\bf JHD}&James Davenport (PI, Bath)&
+{\bf ISSAC}&International Symposium on Symbolic and Algebraic Computation\\
+{\bf LP}&Larry Paulson (PI, Cambridge)&{\bf I/MEGA}&ISSAC and M\'ethodes Effectives en G\'eometrie Alg\'ebrique\\
+{\bf ROB}&Research Officer (post-doctoral, Bath)&{\bf RS}&Research Student\\
+{\bf ROC}&Research Officer (post-doctoral, Cambridge)&
+{\bf RS confirm}&Research Student confirmed in Ph.D. status
+\end{tabular}
+\par
+Maple release numbers are conjectural dates for rendezvous with the Maple release cycle.
+\end{document}
