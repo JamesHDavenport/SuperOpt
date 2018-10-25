@@ -1,0 +1,31 @@
+Notes for Expression of Interest
+
+Title:= 
+Superoptimisation using Expression Synthesis.
+
+<5000 chatacters of text:=
+
+Most optimising compilers, despite the name, merely produce better code, not optimal code.  This is also "better" in the mind of the compiler writer, who may be optimising for time whereas the user might wish to optimise for energy, or some other characteristic.  "Superoptimisation" is therefore the term used for truly optimal production.
+
+Expression synthesis is <MJB to complete>
+
+With the growth of the Internet of Things, time is far from the only thing we might wish to optimise over. In embedded sensors, energy is another. Code size, or active code size, is another.
+
+An entire compiler suite is a major piece of work. We therefore propose an addition to the well-known open source LLVM compiler suite which <JPB to complete>.
+
+UK Work Packages
+
+1
+
+2
+
+3
+
+4 Extension to Floating Point <MJB to write>
+
+
+US Work Packages
+
+5 <AJR to write>
+
+6 <AJR to write>
