@@ -13,13 +13,13 @@ With the growth of the Internet of Things, time is far from the only thing we mi
 
 An entire compiler suite is a major piece of work. We therefore propose an addition to the well-known open source LLVM compiler suite which <JPB to complete>.
 
-UK Work Packages
+UK Work Packages (JHD's guesses - comments welcomed)
 
-1
+1  Adding alternative metrics to LLVM
 
-2
+2  Example metric: code size
 
-3
+3  Energy consuumption
 
 4 Extension to Floating Point <MJB to write>
 
